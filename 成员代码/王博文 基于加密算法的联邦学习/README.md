@@ -1,4 +1,6 @@
 联邦学习隐私保护实验：多种加密技术比较
+
+
 本代码实现了一个联邦学习（Federated Learning）原型系统，对比了明文训练与四种加密/隐私保护方法在 MNIST 分类任务上的效果。加密方法包括：对称加密（AES-CBC）、非对称加密（RSA-OAEP）、差分隐私（DP-SGD 风格的梯度裁剪与加噪）以及同态加密（CKKS 方案，基于 TenSEAL 库）。代码模拟了多客户端场景，客户端计算梯度并加密后发送给服务器，服务器聚合密文梯度并更新全局模型。
 功能特性
 支持两种神经网络模型：LinearClassifier（784→10 全连接）和 SimpleCNN（简单卷积网络）。
@@ -25,7 +27,7 @@ numpy
 cryptography
 安装命令示例：
 pip install torch torchvision numpy cryptography
-# 如需同态加密功能
+
 pip install tenseal
 使用方法
 直接运行脚本即可执行默认实验（线性分类器，3 轮联邦学习，3 个客户端，每客户端 5 个 batch）：
